@@ -5,12 +5,12 @@ DROP DATABASE IF EXISTS ecommerce_db;
 CREATE DATABASE ecommerce_db;
 USE DATABASE ecommerce_db;
 
-CREATE TABLE category (
+CREATE TABLE Category (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     category_name VARCHAR(30) NOT NULL,
 );
 
-CREATE TABLE product (
+CREATE TABLE Product (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     product_name VARCHAR(30) NOT NULL,
     price DECIMAL NOT NULL,
@@ -18,14 +18,18 @@ CREATE TABLE product (
     stock INT NOT NULL DEFAULT 10,
     -- validates that the value is numeric
     category_id INT,
-    FOREIGN KEY (category_id) REFERENCES category (id),
+    FOREIGN KEY (category_id) REFERENCES Category (id),
 );
 
-CREATE TABLE tag (
+CREATE TABLE Tag (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    tag_name VARCHAR (30),
+);
+
+CREATE TABLE ProductTag (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     product_id INT,
-    FOREIGN KEY (product_id) REFERENCES product (id),
+    FOREIGN KEY (product_id) REFERENCES Product (id),
     tag_id INT,
-    FOREIGN KEY tag_id REFERENCES tag (id),
+    FOREIGN KEY (tag_id) REFERENCES Tag (id),
 );
-
