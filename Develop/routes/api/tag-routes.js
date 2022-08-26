@@ -32,7 +32,7 @@ router.post('/', async (req, res) => {
 
 router.put('/:id', async (req, res) => {
   try {
-    const tags = await Tag.update(req.body, {where: req.params.id});
+    const tags = await Tag.update(req.body, {where: { id: req.params.id }});
     res.json(tags);
   } catch (error) {
     res.status(500).json(error);
@@ -41,7 +41,7 @@ router.put('/:id', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
   try {
-    const tags = await Tag.destroy(req.params.id);
+    const tags = await Tag.destroy({where: {id: req.params.id}});
   res.json(tags);
   } catch (error) {
     res.status(500).json(error);
