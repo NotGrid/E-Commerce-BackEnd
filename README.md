@@ -45,7 +45,9 @@ THEN I am able to successfully create, update, and delete data in my database
 
 ### Demo Video
 
+## Video shows Tags, Products, and Categories in that order
 
+[Untitled_ Aug 25 2022 10_54 PM.webm](https://user-images.githubusercontent.com/102490542/186832024-b2a358a7-a8d0-459b-908d-6983b53ae1db.webm)
 
 ### Links
 
